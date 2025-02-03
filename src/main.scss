@@ -1,0 +1,69 @@
+/*
+===========================================
+ Custom Bootstrap 5.3.3 Theme Configuration
+===========================================
+ This SCSS file customizes Bootstrap's color 
+ theme by overriding default variables and adding 
+ custom colors.
+*/
+
+// Import Bootstrap SCSS
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+// ==========================================
+// Custom Color Overrides
+// ==========================================
+$primary: #034b61; // Primary brand color
+$secondary: #6db629; // Secondary color
+$success: #28a745; // Success messages
+$info: #17a2b8; // Informational messages
+$warning: #ffc107; // Warning alerts
+$danger: #dc3545; // Error or danger indicators
+$light: #f8f9fa; // Light theme color
+$dark: #343a40; // Dark theme color
+
+// ==========================================
+// Additional Custom Colors
+// ==========================================
+$custom-primary: #007bff; // Custom Primary
+$custom-secondary: #6c757d; // Custom Secondary
+
+// ==========================================
+// Merging Custom Colors into Bootstrap Theme
+// ==========================================
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+  "custom-primary": $custom-primary,
+  "custom-secondary": $custom-secondary,
+);
+
+// Import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// ==========================================
+// Additional Custom Styles (Optional)
+// ==========================================
+.btn-custom-primary {
+  background-color: $custom-primary;
+  color: #fff;
+  &:hover {
+    background-color: darken($custom-primary, 10%);
+  }
+}
+
+.btn-custom-secondary {
+  background-color: $custom-secondary;
+  color: #fff;
+  &:hover {
+    background-color: darken($custom-secondary, 10%);
+  }
+}
