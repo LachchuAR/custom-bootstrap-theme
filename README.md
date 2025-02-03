@@ -21,7 +21,7 @@ Follow these steps to set up the project locally:
 Clone this repository to your local machine:
 
 ```bash
-git clone [https://github.com/LachchuAR/bootstrap-custom-theme.git](https://github.com/LachchuAR/custom-bootstrap-theme.git)
+git clone (https://github.com/LachchuAR/custom-bootstrap-theme.git)
 cd bootstrap-custom-theme
 ```
 
