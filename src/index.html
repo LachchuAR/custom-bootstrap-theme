@@ -1,188 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auto Dark/Light Mode</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css" />
     <style>
-        /* Smooth transition for background and text color */
-        body {
-            transition: background-color 0.3s, color 0.3s;
-            display: none;
-        }
-
+      /* Smooth transition for background and text color */
+      body {
+        transition: background-color 0.3s, color 0.3s;
+        display: none;
+      }
     </style>
-</head>
+  </head>
 
-<body data-bs-theme="light">
-
+  <body data-bs-theme="light">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-          </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    
-      <nav class="navbar navbar-expand-lg bg-body">
-        <div class="container">
-          <a class="navbar-brand" href="#">Theme Test</a>
-          <button class="btn btn-primary" id="toggle-theme">
-            Toggle Dark Mode
-          </button>
-        </div>
-      </nav>
-    
-      <!-- Main Content -->
-      <div class="container my-5">
-        <h1 class="text-primary">Bootstrap Theme Color Test</h1>
-        <p>This page contains buttons for all theme colors.</p>
-        <p class="text-primary">
-          This page contains buttons for all theme colors.
-        </p>
-        <h1 class="text-light-text-headings">Hello</h1>
-        <h5 class="text-light-text-headings">Hello world</h5>
-        
-    
-        <!-- Light Mode Buttons -->
-        <h3>Light Mode Buttons</h3>
-        <button class="btn btn-primary">Primary</button>
-        <button class="btn btn-secondary">Secondary</button>
-        <button class="btn btn-success">Success</button>
-        <button class="btn btn-info">Info</button>
-        <button class="btn btn-warning">Warning</button>
-        <button class="btn btn-danger">Danger</button>
-        <button class="btn btn-light text-dark">Light</button>
-        <button class="btn btn-dark">Dark</button>
-    
-        <!-- Custom Theme Buttons -->
-        <h3 class="mt-4">Custom Theme Buttons</h3>
-        <button class="btn btn-dark-mode-bg">Dark Mode BG</button>
-        <button class="btn btn-dark-mode-primary">Dark Mode Primary</button>
-        <button class="btn btn-dark-mode-secondary">Dark Mode Secondary</button>
-        <button class="btn btn-dark-mode-text-headings">
-          Dark Mode Headings
-        </button>
-        <button class="btn btn-dark-mode-text-body">Dark Mode Text</button>
-        <button class="btn btn-dark-mode-accent">Dark Mode Accent</button>
-        <button class="btn btn-dark-mode-border">Dark Mode Border</button>
       </div>
-    
-      <div class="dropdown">
-        <button
-          class="btn btn-secondary dropdown-toggle"
-          type="button"
-          id="dropdownMenuButtonLight"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Default dropdown
+    </nav>
+
+    <nav class="navbar navbar-expand-lg bg-body">
+      <div class="container">
+        <a class="navbar-brand" href="#">Theme Test</a>
+        <button class="btn btn-primary" id="toggle-theme">
+          Toggle Dark Mode
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
-          <li><a class="dropdown-item active" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
       </div>
-    
-      <div class="dropdown">
-        <button
-          class="btn btn-secondary dropdown-toggle"
-          type="button"
-          id="dropdownMenuButtonDark"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Dark dropdown
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
-          <li><a class="dropdown-item active" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
-      </div>
-    
-      <div class="dropdown">
-        <button
-          class="btn btn-primary dropdown-toggle"
-          type="button"
-          id="dropdownMenuButtonDark"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Dark dropdown
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
-          <li><a class="dropdown-item active" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
-      </div>
-    
-        <script>
-            // Function to detect and apply the current theme based on system preference or localStorage
-            (function () {
-                // Check for stored theme or use system preference (dark/light)
-                const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-                document.body.setAttribute('data-bs-theme', currentTheme);
-    
-                // Display the page after theme is applied
-                document.body.style.display = 'block';
-    
-                // Listen for system theme change and update page theme accordingly
-                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-                    const newTheme = e.matches ? 'dark' : 'light';
-                    document.body.setAttribute('data-bs-theme', newTheme);
-                    localStorage.setItem('theme', newTheme);
-                });
-            })();
-    
-            // Toggle theme on button click and store preference
-            document.getElementById('toggle-theme').addEventListener('click', function () {
-                const currentTheme = document.body.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
-                document.body.setAttribute('data-bs-theme', currentTheme);
-                localStorage.setItem('theme', currentTheme);
-            });
-        </script>
-    
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-    
-    </html>
-    
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+      <h1 class="text-primary">Bootstrap Theme Color Test</h1>
+      <p>This page contains buttons for all theme colors.</p>
+      <p class="text-primary">
+        This page contains buttons for all theme colors.
+      </p>
+      <h1 class="text-light-text-headings">Hello</h1>
+      <h5 class="text-light-text-headings">Hello world</h5>
+
+      <!-- Light Mode Buttons -->
+      <h3>Light Mode Buttons</h3>
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-success">Success</button>
+      <button class="btn btn-info">Info</button>
+      <button class="btn btn-warning">Warning</button>
+      <button class="btn btn-danger">Danger</button>
+      <button class="btn btn-light text-dark">Light</button>
+      <button class="btn btn-dark">Dark</button>
+
+      <!-- Custom Theme Buttons -->
+      <h3 class="mt-4">Custom Theme Buttons</h3>
+      <button class="btn btn-dark-mode-bg">Dark Mode BG</button>
+      <button class="btn btn-dark-mode-primary">Dark Mode Primary</button>
+      <button class="btn btn-dark-mode-secondary">Dark Mode Secondary</button>
+      <button class="btn btn-dark-mode-text-headings">
+        Dark Mode Headings
+      </button>
+      <button class="btn btn-dark-mode-text-body">Dark Mode Text</button>
+      <button class="btn btn-dark-mode-accent">Dark Mode Accent</button>
+      <button class="btn btn-dark-mode-border">Dark Mode Border</button>
+    </div>
+
+    <div class="dropdown">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButtonLight"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Default dropdown
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
+        <li><a class="dropdown-item active" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButtonDark"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Dark dropdown
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+        <li><a class="dropdown-item active" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+      <button
+        class="btn btn-primary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButtonDark"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Dark dropdown
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+        <li><a class="dropdown-item active" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+      </ul>
+    </div>
+
+    <script>
+      // Function to detect and apply the current theme based on system preference or localStorage
+      (function () {
+        // Check for stored theme or use system preference (dark/light)
+        const currentTheme =
+          localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.body.setAttribute("data-bs-theme", currentTheme);
+
+        // Display the page after theme is applied
+        document.body.style.display = "block";
+
+        // Listen for system theme change and update page theme accordingly
+        window
+          .matchMedia("(prefers-color-scheme: dark)")
+          .addEventListener("change", (e) => {
+            const newTheme = e.matches ? "dark" : "light";
+            document.body.setAttribute("data-bs-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+          });
+      })();
+
+      // Toggle theme on button click and store preference
+      document
+        .getElementById("toggle-theme")
+        .addEventListener("click", function () {
+          const currentTheme =
+            document.body.getAttribute("data-bs-theme") === "dark"
+              ? "light"
+              : "dark";
+          document.body.setAttribute("data-bs-theme", currentTheme);
+          localStorage.setItem("theme", currentTheme);
+        });
+    </script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
