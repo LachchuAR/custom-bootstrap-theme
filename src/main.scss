@@ -7,63 +7,237 @@
  custom colors.
 */
 
-// Import Bootstrap SCSS
+// Import Bootstrap SCSS Core Files
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/variables-dark";
 
 // ==========================================
-// Custom Color Overrides
+// Light Mode Colors
 // ==========================================
-$primary: #034b61; // Primary brand color
-$secondary: #6db629; // Secondary color
-$success: #28a745; // Success messages
-$info: #17a2b8; // Informational messages
-$warning: #ffc107; // Warning alerts
-$danger: #dc3545; // Error or danger indicators
-$light: #f8f9fa; // Light theme color
-$dark: #343a40; // Dark theme color
+$light-background: #f8f9fa;
+$light-primary: #007bff;
+$light-secondary: #e9ecef;
+$light-text-headings: #212529;
+$light-text-body: #495057;
+$light-accent: #0056b3;
+$light-border: #dee2e6;
 
 // ==========================================
-// Additional Custom Colors
+// Dark Mode Colors
 // ==========================================
-$custom-primary: #007bff; // Custom Primary
-$custom-secondary: #6c757d; // Custom Secondary
+$dark-background: #121212;
+$dark-primary: #007bff;
+$dark-secondary: #1e1e1e;
+$dark-text-headings: #ffffff;
+$dark-text-body: #b3b3b3;
+$dark-accent: #00d1ff;
+$dark-border: #292929;
 
 // ==========================================
-// Merging Custom Colors into Bootstrap Theme
+// Bootstrap Default Theme Overrides
+// ==========================================
+$primary: $light-primary;
+$secondary: $light-secondary;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #212529;
+
+// ==========================================
+// Custom Theme Colors for Light & Dark Modes
 // ==========================================
 $theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark,
-  "custom-primary": $custom-primary,
-  "custom-secondary": $custom-secondary,
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "light-background": $light-background,
+  "light-primary": $light-primary,
+  "light-secondary": $light-secondary,
+  "light-text-headings": $light-text-headings,
+  "light-text-body": $light-text-body,
+  "light-accent": $light-accent,
+  "light-border": $light-border,
 );
 
-// Import Bootstrap
+[data-bs-theme="light"] {
+  /* Dropdown */
+  .dropdown-menu {
+    // --bs-dropdown-bg: #ffffff;
+    --bs-dropdown-link-active-bg: #{$primary};
+  }
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: rgba($primary, 0.2); // 20% opacity
+  }
+
+  .dropdown-item.active,
+  .dropdown-item:active {
+    background-color: $primary !important; // Keep active links solid
+  }
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-color: #{$dark-text-headings};
+  --bs-body-bg: #{$dark-background};
+  --bs-tertiary-bg: #{$dark-background};
+
+  /* Dropdown */
+  .dropdown-menu {
+    --bs-dropdown-bg: #1e1e1e;
+    --bs-dropdown-link-active-bg: #{$dark-primary};
+  }
+  .dropdown-item.active,
+  .dropdown-item:active {
+    color: #{$dark-background};
+  }
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-link.show {
+    color: #{$dark-primary};
+  }
+
+  .btn:hover {
+    color: #{$dark-text-headings};
+  }
+  .btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show {
+    color: #{$dark-text-headings};
+}
+
+
+.btn-primary {
+    --bs-btn-color: #{$dark-text-headings};
+    --bs-btn-bg: #{$dark-primary};
+    --bs-btn-border-color: #{$dark-primary};
+    --bs-btn-hover-bg: #{darken($dark-primary, 10%)};
+    --bs-btn-hover-border-color: #{darken($dark-primary, 15%)};
+    --bs-btn-active-bg: #{darken($dark-primary, 15%)};
+    --bs-btn-active-border-color: #{darken($dark-primary, 20%)};
+    --bs-btn-focus-border-color: rgba(0, 209, 255, 0.5);
+    --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 209, 255, 0.2);
+  }
+
+  .btn-secondary {
+    --bs-btn-color: #{$dark-text-headings};
+    --bs-btn-bg: #{$dark-secondary};
+    --bs-btn-border-color: #{$dark-secondary};
+    --bs-btn-hover-bg: #{darken($dark-secondary, 10%)};
+    --bs-btn-hover-border-color: #{darken($dark-secondary, 15%)};
+    --bs-btn-active-bg: #{darken($dark-secondary, 15%)};
+    --bs-btn-active-border-color: #{darken($dark-secondary, 20%)};
+    --bs-btn-focus-border-color: rgba(0, 209, 255, 0.5);
+    --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 209, 255, 0.2);
+  }
+
+  /* Navbar */
+  .navbar {
+    --bs-navbar-color: #b3b3b3;
+    --bs-navbar-hover-color: #ffffff;
+    --bs-navbar-active-color: #00d1ff;
+    --bs-navbar-brand-color: #ffffff;
+    --bs-navbar-brand-hover-color: #00d1ff;
+    --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Cards */
+  .card {
+    --bs-card-bg: #1e1e1e;
+    --bs-card-border-color: #292929;
+    --bs-card-color: #b3b3b3;
+  }
+
+  /* Table */
+  .table {
+    --bs-table-bg: transparent;
+    --bs-table-color: #b3b3b3;
+    --bs-table-border-color: #292929;
+    --bs-table-striped-bg: rgba(255, 255, 255, 0.05);
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Forms */
+  .form-control {
+    --bs-form-control-bg: #1e1e1e;
+    --bs-form-control-border-color: #292929;
+    --bs-form-control-color: #b3b3b3;
+    --bs-form-control-placeholder-color: rgba(255, 255, 255, 0.5);
+    --bs-form-control-focus-bg: #292929;
+    --bs-form-control-focus-border-color: #00d1ff;
+    --bs-form-control-focus-box-shadow: 0 0 0 0.25rem rgba(0, 209, 255, 0.2);
+  }
+
+  /* Alerts */
+  .alert {
+    --bs-alert-color: #b3b3b3;
+    --bs-alert-bg: #292929;
+    --bs-alert-border-color: #00d1ff;
+  }
+
+  /* Modals */
+  .modal-content {
+    --bs-modal-bg: #1e1e1e;
+    --bs-modal-border-color: #292929;
+  }
+
+  /* Progress Bar */
+  .progress {
+    --bs-progress-bg: #292929;
+  }
+
+  .progress-bar {
+    --bs-progress-bar-bg: #00d1ff;
+  }
+
+  .text-light-text-headings {
+    color: #{$dark-text-headings} !important;
+  }
+  .text-light-text-body {
+    color: #{$dark-text-body} !important;
+  }
+  .text-light-accent {
+    color: #{$dark-accent} !important;
+  }
+  .text-light-border {
+    color: #{$dark-border} !important;
+  }
+  .text-bg-light-background {
+    background-color: #{$dark-background} !important;
+  }
+  .text-primary {
+    color: #{$dark-primary} !important;
+  }
+  .text-secondary {
+    color: #{$dark-secondary} !important;
+  }
+}
+
+// ==========================================
+// Import Bootstrap (After Variables)
+// ==========================================
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // ==========================================
 // Additional Custom Styles (Optional)
 // ==========================================
-.btn-custom-primary {
-  background-color: $custom-primary;
+.btn-dark-mode {
+  background-color: $dark-accent;
   color: #fff;
   &:hover {
-    background-color: darken($custom-primary, 10%);
+    background-color: darken($dark-accent, 10%);
   }
 }
 
-.btn-custom-secondary {
-  background-color: $custom-secondary;
+.btn-light-mode {
+  background-color: $light-accent;
   color: #fff;
   &:hover {
-    background-color: darken($custom-secondary, 10%);
+    background-color: darken($light-accent, 10%);
   }
 }
